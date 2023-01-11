@@ -1247,12 +1247,17 @@ ARM Macro Assembler    Page 20
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=.\objects\startup_tm4c123.d -o.\objects\startup_tm4c123.o -I.\R
-TE\Compiler -I.\RTE\_Target_1 -IC:\Users\Mohamed_Mehery\AppData\Local\Arm\Packs
-\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\Mohamed_Mehery\AppData\Local\Arm
-\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS\RTX\INC -IC:\Users\Mohamed_Mehery\AppData\Loc
-al\Arm\Packs\Keil\ARM_Compiler\1.7.2\Include -IC:\Users\Mohamed_Mehery\AppData\
-Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --predefine="__RTX S
-ETA 1" --predefine="__UVISION_VERSION SETA 528" --predefine="_RTE_ SETA 1" --pr
+TE\Compiler -I.\RTE\RTOS -I.\RTE\_Target_1 -IC:\Users\Mohamed_Mehery\AppData\Lo
+cal\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\FreeRTOS\Include -IC:\Users
+\Mohamed_Mehery\AppData\Local\Arm\Packs\ARM\CMSIS-FreeRTOS\10.5.1\CMSIS\RTOS2\F
+reeRTOS\Include1 -IC:\Users\Mohamed_Mehery\AppData\Local\Arm\Packs\ARM\CMSIS-Fr
+eeRTOS\10.5.1\Source\include -IC:\Users\Mohamed_Mehery\AppData\Local\Arm\Packs\
+ARM\CMSIS-FreeRTOS\10.5.1\Source\portable\RVDS\ARM_CM4F -IC:\Users\Mohamed_Mehe
+ry\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\Mohame
+d_Mehery\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\RTOS2\Include -IC:\Users
+\Mohamed_Mehery\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.7.2\Include -IC:\Us
+ers\Mohamed_Mehery\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\T
+M4C123 --predefine="__UVISION_VERSION SETA 528" --predefine="_RTE_ SETA 1" --pr
 edefine="TM4C123GH6PM SETA 1" --list=.\listings\startup_tm4c123.lst RTE\Device\
 TM4C123GH6PM\startup_TM4C123.s
 
@@ -2617,4 +2622,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-475 symbols in table
+474 symbols in table
