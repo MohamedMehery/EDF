@@ -13,7 +13,7 @@
 #include <stdio.h>
 #include "FreeRTOS.h"
 #include "task.h"
-#include "lpc21xx.h"
+
 #include "serial.h"
 #include "GPIO.h"
 #include "semphr.h"
