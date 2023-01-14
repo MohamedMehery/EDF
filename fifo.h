@@ -2,6 +2,7 @@
 #define _FIFO_H_
 
 #include "stdint.h"
+#include "lpc21xx.h"
 
 typedef struct
 {

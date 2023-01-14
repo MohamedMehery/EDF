@@ -1,5 +1,6 @@
 #include"fifo.h"
 #include "stdint.h"
+#include "lpc21xx.h"
 
 /**
 * @brief this function initialize fifo buffer
