@@ -211,34 +211,10 @@ int main( void )
 
     /* Create Tasks here */
 
-		xTaskPeriodicCreate(Button_1_Monitor,
-												"button1",
-												50,
-												(void*)0,
-												2,
-												&Button_1_Monitor_Handle,
-												50);
-		xTaskPeriodicCreate(Button_2_Monitor,
-												"button2",
-												50,
-												(void*)0,
-												1,
-												&Button_2_Monitor_Handle,
-												50);					
-		xTaskPeriodicCreate(Periodic_Transmitter,
-												"periodicTransmitter",
-												50,
-												(void*)0,
-												1,
-												&Periodic_Transmitter_Handle,
-												100);					
-		xTaskPeriodicCreate(Uart_Receiver,
-												"Uart_Receiver",
-												50,
-												(void*)0,
-												1,
-												&Uart_Receiver_Handle,
-												20);	
+		xTaskPeriodicCreate(Button_1_Monitor,"button1",50,(void*)0,2,&Button_1_Monitor_Handle,50);
+		xTaskPeriodicCreate(Button_2_Monitor,"button2",50,(void*)0,1,&Button_2_Monitor_Handle,50);					
+		xTaskPeriodicCreate(Periodic_Transmitter,"periodicTransmitter",50,(void*)0,1,&Periodic_Transmitter_Handle,100);					
+		xTaskPeriodicCreate(Uart_Receiver,"Uart_Receiver",50,(void*)0,1,&Uart_Receiver_Handle,20);	
 	xTaskPeriodicCreate(Load_1_Simulation, 
 											"Load_1_Simulation",
 											50,
