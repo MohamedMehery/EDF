@@ -215,20 +215,8 @@ int main( void )
 		xTaskPeriodicCreate(Button_2_Monitor,"button2",50,(void*)0,1,&Button_2_Monitor_Handle,50);					
 		xTaskPeriodicCreate(Periodic_Transmitter,"periodicTransmitter",50,(void*)0,1,&Periodic_Transmitter_Handle,100);					
 		xTaskPeriodicCreate(Uart_Receiver,"Uart_Receiver",50,(void*)0,1,&Uart_Receiver_Handle,20);	
-	xTaskPeriodicCreate(Load_1_Simulation, 
-											"Load_1_Simulation",
-											50,
-											(void*)0,
-											1,
-											&Load_1_Simulation_handle,
-											10);
-	xTaskPeriodicCreate(Load_2_Simulation, 
-											"Load_1_Simulation",
-											50,
-											(void*)0,
-											1,
-											&Load_2_Simulation_handle,
-											100);
+		xTaskPeriodicCreate(Load_1_Simulation, "Load_1_Simulation",50,(void*)0,1,&Load_1_Simulation_handle,10);
+		xTaskPeriodicCreate(Load_2_Simulation, "Load_1_Simulation",50,(void*)0,1,&Load_2_Simulation_handle,100);
 	/* Now all the tasks have been started - start the scheduler.
 
 	@NOTE : Tasks run in system mode and the scheduler runs in Supervisor mode.
