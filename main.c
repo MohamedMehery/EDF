@@ -156,20 +156,18 @@ void Periodic_Transmitter(void *pvParameter)
 void Uart_Receiver(void *pvParameter)
 { 
 	TickType_t xLastWakeTime = xTaskGetTickCount();
-	message_t temp;
+	message_t msg;
 	for(;;)
 	{
 		//add to queue
 		//periodic 100
-		if(fifo_get(&messagesBuffer,&temp) == fifo_succeded)
+		if(fifo_get(&messagesBuffer,&msg) == fifo_succeded)
 		{
-			if (vSerialPutString(temp.message,temp.messageLength) == pdTRUE )
+			if (vSerialPutString(msg.message,msg.messageLength) == pdTRUE )
 			{
-				fifo_pop(&messagesBuffer,&temp);
+				fifo_pop(&messagesBuffer,&msg);
 			}
-		}
-	
-	
+		}	
 		vTaskDelayUntil(&xLastWakeTime,20);
 
 	}
