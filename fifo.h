@@ -6,7 +6,7 @@
 
 typedef struct
 {
-	uint8_t* message;
+	uint8_t message[20];
 	uint32_t messageLength;
 }message_t;
 

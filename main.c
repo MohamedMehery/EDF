@@ -11,6 +11,7 @@
  *********************************************************************************************************************/
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "FreeRTOS.h"
 #include "task.h"
 #include "lpc21xx.h"
@@ -81,7 +82,8 @@ void Button_1_Monitor(void *pvParameter)
 			{
 				if(Button_1_Current_State == PIN_IS_HIGH)
 				{
-					button1_message.message = BUTTON_1_RISING_MESSAGE;
+//					button1_message.message = BUTTON_1_RISING_MESSAGE;
+					sprintf(button1_message.message , BUTTON_1_RISING_MESSAGE );
 					button1_message.messageLength = BUTTON_1_RISING_MESSAGE_length;
 					fifo_push(&messagesBuffer,button1_message);
 						//buttin1 rising
@@ -90,7 +92,8 @@ void Button_1_Monitor(void *pvParameter)
 				{
 						//add to queue
 						//buttin1 falling
-					button1_message.message = BUTTON_1_FALLING_MESSAGE;
+//					button1_message.message = BUTTON_1_FALLING_MESSAGE;
+					sprintf(button1_message.message , BUTTON_1_FALLING_MESSAGE );
 					button1_message.messageLength = BUTTON_1_FALLING_MESSAGE_length;
 					fifo_push(&messagesBuffer,button1_message);
 				}
@@ -118,7 +121,8 @@ void Button_2_Monitor(void *pvParameter)
 				if(Button_2_Current_State == PIN_IS_HIGH)
 				{
 					//buttin1 rising
-					button2_message.message = BUTTON_2_RISING_MESSAGE;
+//					button2_message.message = BUTTON_2_RISING_MESSAGE;
+					sprintf(button2_message.message , BUTTON_2_RISING_MESSAGE );
 					button2_message.messageLength = BUTTON_2_RISING_MESSAGE_length;
 					fifo_push(&messagesBuffer,button2_message);
 				}
@@ -126,7 +130,7 @@ void Button_2_Monitor(void *pvParameter)
 				{
 						//add to queue
 						//buttin1 falling
-					button2_message.message = BUTTON_2_FALLING_MESSAGE;
+					sprintf(button2_message.message , BUTTON_2_FALLING_MESSAGE );
 					button2_message.messageLength = BUTTON_2_FALLING_MESSAGE_length;
 					fifo_push(&messagesBuffer,button2_message);
 				}
@@ -142,7 +146,7 @@ void Periodic_Transmitter(void *pvParameter)
 { 
 	TickType_t xLastWakeTime = xTaskGetTickCount();
 	message_t periodicTransmitter_message;
-	periodicTransmitter_message.message =PERIODIC_TRANSMITTER_MESSAGE;
+	sprintf(periodicTransmitter_message.message , PERIODIC_TRANSMITTER_MESSAGE );
 	periodicTransmitter_message.messageLength =PERIODIC_TRANSMITTER_MESSAGE_length;
 
 	for(;;)
